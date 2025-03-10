@@ -77,19 +77,19 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=n" >> .config #smartdns
         echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=n" >> .config #adg DNS去AD
         ##内网穿透服务##
-        echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=n" >> .config #zerotier ~1.3M
+        echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> .config #zerotier ~1.3M
         echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n" >> .config #aliddns
         echo "CONFIG_FIRMWARE_INCLUDE_DDNSTO=n" >> .config #ddnsto ~0.5M
         echo "CONFIG_FIRMWARE_INCLUDE_DDNSGO=n" >> .config #ddnsgo
         echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=n" >> .config #wireguard ~10k
-        echo "CONFIG_FIRMWARE_INCLUDE_CLOUDFLARE=y" >> .config #cloudflare
+        echo "CONFIG_FIRMWARE_INCLUDE_CLOUDFLARE=n" >> .config #cloudflare
         ##内网穿透服务##
         echo "CONFIG_FIRMWARE_INCLUDE_ALDRIVER=n" >> .config  #ALDRIVER  ~3m
         echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config #mentohust
         ## FTP服务 ~0.2MB ##
         echo "CONFIG_FIRMWARE_INCLUDE_FTPD=n" >> .config #ftp
         ## Alist测试 ~10MB ##
-        echo "CONFIG_FIRMWARE_INCLUDE_ALIST=y" >> .config #Alist
+        echo "CONFIG_FIRMWARE_INCLUDE_ALIST=n" >> .config #Alist
         ##流控QOS##
         echo "CONFIG_FIRMWARE_INCLUDE_SQM=n" >> .config #Qos限速
         #CPU超频#
@@ -108,5 +108,5 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: Padavan-MI-R4A-jinenge
+        name: Padavan-MI-R4A_4.4.198.9-100
         path: /opt/images
